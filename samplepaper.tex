@@ -23,7 +23,7 @@
 %
 \title{Automatic Knowledge Acquisition System with Large Language Model in Academic Domain}
 %
-%\titlerunning{Abbreviated paper title}
+\titlerunning{Automatic KAS with LLM in Academic Domain}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
@@ -43,7 +43,7 @@ Dade Nurjanah, Ph.D\inst{1}\orcidID{0000-0001-9318-8409}}
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-In academic, a significant challenge in knowledge acquisition involves combining explicit information from academic documents and implicit knowledge through interviews with experts, such as program secretaries, and lecturers. This research proposes an automated Knowledge Acquisition System that utilizes the Large Language Models to address inefficiencies in explicit and implicit knowledge extraction. The background of the research highlights the urgency of efficiency in knowledge acquisition to support academic processes, including problems involving final assignments, graduation information, practical work, and course registration. Traditional methods tend to be less effective in capturing explicit knowledge, hindering a holistic understanding of the academic domain. This research integrates Large Language Models to collect explicit knowledge from documents and implicit knowledge from interviews, creating a system architecture that facilitates comprehensive knowledge acquisition. Key results demonstrate the system's effectiveness in knowledge acquisition, with the potential to improve various academic processes, including Final Project completion, Practical Work, Graduation, Course Registration, and External Activities. This research achieves significant advances in knowledge acquisition methodologies in academic environments, offering a holistic and efficient approach to managing explicit and implicit knowledge, while providing solutions to a number of academic problems.
+In academic, combining explicit knowledge from documents and implicit knowledge from interviews is a major challenge. This research introduces an automated Knowledge Acquisition System (KAS) utilizing Large Language Models (LLMs) to enhance knowledge extraction. The system addresses inefficiencies in capturing explicit information from academic sources while incorporating expert insights from interviews. The results show significant improvements in key academic processes such as course registration, final projects, and graduation. This research offers a holistic, efficient approach to managing academic knowledge, providing solutions to common administrative challenges.
 
 \keywords{knowledge acquisition \and large language model \and academic domain \and explicit knowledge \and implicit knowledge.}
 \end{abstract}
@@ -52,67 +52,37 @@ In academic, a significant challenge in knowledge acquisition involves combining
 %
 \section{Introduction}
 \subsection{Background}
-
-The focus of this research is the development of the Knowledge Acquisition System (KAS) for the academic domain utilizing Large Language Models (LLMs). Success in higher education largely depends on students' understanding of various academic processes, such as final projects, graduation information, internship placements, and course registrations. Unfortunately, at any university in Indonesia, this information is often extensive and complex, leading to diverse interpretations. Knowledge regarding these aspects is frequently implicit, known only to faculty or other academic staff. Therefore, there is a need to extract both explicit and implicit knowledge. In this context, developing the KAS using LLMs becomes crucial to address bias issues and ensure more consistent and accurate information retrieval.
-
-The background of this research stems from the imperfections in current knowledge acquisition practices. Traditional methods often fail to capture the implicit knowledge hidden within academic documents, resulting in incomplete understanding. In knowledge management, the term "implicit" refers to tacit knowledge that is not clearly articulated in written or formal forms.
-
-For instance, consider the guidelines for final projects. Although there are official guidelines provided by the academic institution, interpretations of these guidelines may vary among faculty and students. Some aspects might not be explicitly documented in the guidelines, and tacit knowledge from experts can help standardize perceptions and clarify interpretations that may otherwise lead to discrepancies.
-
-The choice of LLMs as the language model for the KAS is based on their ability to handle knowledge extraction from human language. This approach is expected to address challenges in understanding and aligning complex information, thereby fulfilling broader informational needs within the academic realm.
-
-Thus, leveraging LLMs in KAS can help overcome various challenges in knowledge acquisition within academic environments. This system aims to enhance the accuracy and completeness of obtained information, ensuring that hidden knowledge can be accessed and utilized effectively, thereby supporting better knowledge management in the academic domain.
+This research focuses on developing a Knowledge Acquisition System (KAS) using Large Language Models (LLMs) to enhance academic information retrieval. In higher education, implicit knowledge, such as faculty guidelines and academic processes, is often difficult to capture. Traditional methods frequently lead to inconsistencies in understanding explicit and tacit knowledge. By leveraging LLMs, the KAS aims to extract both types of knowledge, ensuring accuracy and consistency, particularly in academic processes like final projects and course registrations, and addressing biases that hinder effective information management.
 
 \subsection{Problem Statement}
-This research focuses on developing the KAS in the academic domain using LLMs. To facilitate interaction with the LLMs, we utilize the Langchain framework, a tool designed to integrate and optimize the use of language models in specific applications. The gaps identified in the current knowledge acquisition conditions within academic environments include several critical aspects affecting efficiency and depth of understanding:
-\begin{enumerate}
-    \item \textbf{Difficulty in Extracting Implicit Knowledge} \\
-    Traditional methods often fail to capture implicit knowledge in academic documents due to the time-consuming and error-prone nature of manual processes. Manual data extraction typically involves sifting through large volumes of academic documents, which can lead to missed information and inconsistent results \cite{kiran2019}. This inefficiency underscores the need for automated systems like KAS, which can leverage LLMs to accelerate and improve the accuracy of information extraction.
-    
-    \item \textbf{Collection and Understanding of Tacit Knowledge} \\
-    Tacit knowledge, often held by academic secretaries and faculty, is difficult to capture and document. This is due to the high level of busyness of the study program secretary and lecturers, which means that it takes a long time to structure and write down their tacit knowledge. The KAS with LLMs and interview techniques can identify, codify, and integrate this tacit knowledge, making it more accessible.
-    
-    \item \textbf{Limitations of Traditional Methods in Aligning Information} \\
-    Relevant information in academic context is scattered across various documents and individuals, leading to varying interpretations. The KAS using LLMs can automatically consolidate and align knowledge from diverse sources, ensuring that the information produced is comprehensive and well-structured.
-    
-    \item \textbf{Need for an Adaptive and Responsive System} \\
-    The dynamic nature of academic environments requires a system that is flexible and can be updated regularly. KAS developed with LLMs technology such as Langchain can be adapted to accommodate changes in policies, procedures, and new knowledge, ensuring the system remains relevant and effective \cite{deepLearning2023LangChain}.
-\end{enumerate}
-
-By addressing these gaps, this research aims to contribute significantly to enhance the efficiency and depth of understanding in the academic domain. The development of the KAS utilizing LLMs could serve as an innovative solution to improve knowledge acquisition processes, ensuring that important and relevant information is easily accessible to all involved parties.
+This research develops a KAS using LLMs to address gaps in academic knowledge management. Traditional methods struggle with extracting implicit knowledge and capturing tacit knowledge from faculty due to time constraints and inefficiency \cite{kiran2019}. The system consolidates scattered academic information and adapts to dynamic environments, improving both accessibility and accuracy. Integrating LLMs like LangChain, KAS automates data extraction, aligns diverse sources, and ensures responsiveness to changes \cite{deepLearning2023LangChain}. This solution aims to enhance academic knowledge processes significantly.
 
 \subsection{Objective}
-The objective of this research is to develop the KAS for the academic domain using OpenAI's language model, GPT-3.5. The primary goals are to create an effective KAS capable of collecting explicit knowledge from academic documents and extracting tacit knowledge through interviews with experts, such as academic secretaries and faculty members. Additionally, this research aims to enhance the accuracy of knowledge extraction from these sources by focusing on identifying and addressing potential barriers or noise, resulting in cleaner and more reliable data. Another goal is to efficiently integrate explicit knowledge from academic documents with tacit knowledge from interviews. This integration is expected to form a more holistic and in-depth understanding of the academic domain, creating a more complete and accurate representation.
-
-In the development phase of the KAS, this research also aims to establish evaluation metrics that effectively measure the system's performance. These metrics will include accuracy in capturing knowledge, processing speed, and adaptability to various types of documents and interview contexts. Finally, the research seeks to identify the contributions of the KAS to overall academic management. By detailing its potential contributions, it is hoped that the KAS will positively impact decision-making efficiency, curriculum planning, and human resource management in the academic context. By achieving these objectives, the research aims to provide a significant contribution to the advancement of KAS in the academic context, opening opportunities for improved academic management processes overall.
+The objective of this research is to develop a KAS using GPT-3.5 to gather explicit knowledge from academic documents and extract tacit knowledge from interviews with experts. The system aims to improve knowledge accuracy by reducing noise and effectively integrating both knowledge types for a holistic understanding of academic processes. Additionally, it seeks to establish performance evaluation metrics and assess the KAS's contributions to academic management, enhancing decision-making, curriculum planning, and resource management.
 
 \section{Literature Review}
 \subsection{Knowledge Management}
-Knowledge integration is a combination of social skills and cooperation. It is the process of exchanging ideas between individuals and organizations \cite{Gao2021}. Knowledge management is well suited to the need for clear reporting and transparency for public administration \cite{Bem2022}.Tacit knowledge and explicit knowledge are two fundamental categories in the study of knowledge management. Tacit knowledge refers to the nuanced and often unspoken insights that arise from personal experiences, intuitions, and reflections. It is inherently unstructured and challenging to document, residing deeply within individuals and often revealed through practice and interaction. In contrast, explicit knowledge is systematically articulated and documented, encompassing data, information, and formal documents that can be easily communicated, shared, and stored. Explicit knowledge is structured and can be readily accessed, analyzed, and utilized by others. The interplay between these types of knowledge is crucial for effective knowledge management and organizational learning \cite{vincent2022}. 
+Knowledge management involves integrating social skills and collaboration to exchange ideas between individuals and organizations \cite{Gao2021}. It is essential for clear reporting and transparency, especially in public administration \cite{Bem2022}. Tacit knowledge, drawn from personal experiences and intuition, is unstructured and hard to document, while explicit knowledge consists of formal, easily communicated data and documents. Managing both types of knowledge is key to enhancing organizational learning and effectiveness \cite{vincent2022}.
 
 \subsection{Knowledge Acquisition System}
-The study of knowledge representation forms a critical foundation for developing effective and efficient KAS. One of the most recent and popular representation of knowledge is graph. Recent research by Hogan et al. \cite{Hogan2021} offers a comprehensive review of knowledge graphs, covering the challenges and lessons learned from their implementation at an industrial scale. This work is highly relevant for advancing KAS by providing insights into managing complex knowledge structures. 
+The study of knowledge representation is crucial for developing effective KAS. Knowledge graphs have emerged as a popular representation, with Hogan et al. \cite{Hogan2021} providing a comprehensive review of their challenges and lessons from industrial implementation. Noy et al. \cite{Noy2019} further highlight the lessons learned in building large-scale knowledge graphs, offering valuable insights for managing open web information. Paulheim \cite{Paulheim2017} emphasizes refining knowledge graphs through various methods to improve data quality. As noted by Wiharja et al. \cite{wiharja2020iterative}, knowledge graphs present information in triple format (subject, predicate, object), suggesting that integrating graph-based representation and structured refinement can enhance systems for managing knowledge.
 
-Additionally, Noy et al. \cite{Noy2019} highlight the lessons and challenges involved in building industrial-scale knowledge graphs, offering valuable perspectives for developing systems that manage open web information more effectively. Paulheim \cite{Paulheim2017} also emphasizes the importance of refining knowledge graphs through various approaches and evaluation methods, contributing to the improvement of data quality. According to \cite{wiharja2020iterative}, a knowledge graph is a knowledge that is presented in triple format (entity as a subject, predicate, entity or literal as an object). By integrating these approaches, recent research indicates that graph-based knowledge representation and structured refinement methods can lead to more efficient and accurate systems for managing open web information.
-
-In the context of this review, there is a significant shift towards utilizing LLMs in knowledge acquisition. One relevant study is the work detailing the use of LLMs in the development of KAS. The utilization of LLMs, as described by Brown \cite{Brown2020}, enables systems to understand and extract knowledge from documents with a higher level of linguistic complexity. The transition to LLMs was driven by the limitations of knowledge graphs, such as their reliance on structured data and the difficulty of capturing tacit knowledge, which often requires an understanding of nuanced context and language. LLMs, by contrast, excel at processing unstructured data and can capture both explicit and tacit knowledge, making them particularly effective for complex environments like academia, where knowledge is often context-dependent and dynamic.
-
-The comparison between graph models and language models highlights the strengths of LLMs, particularly in handling unstructured data and understanding contextual nuances. LLMs like GPT provide holistic knowledge acquisition, addressing limitations in traditional knowledge extraction. In \cite{Krause2024}, discusses how Generative AI (GAI), such as ChatGPT, enhances learning efficiency and personalization in education but also raises concerns about academic integrity and reliance on technology. These insights further emphasize the flexibility of LLMs in KAS.
+Recently, there has been a shift towards using Large Language Models (LLMs) in KAS. Brown \cite{Brown2020} discusses how LLMs enable systems to extract knowledge from complex documents, overcoming the limitations of knowledge graphs that struggle with unstructured data and tacit knowledge. LLMs excel in processing nuanced, context-dependent information, making them particularly effective in academic settings. The comparison between graph models and language models reveals LLMs' strengths in handling unstructured data, with insights from Krause \cite{Krause2024} emphasizing their role in enhancing learning efficiency while raising concerns about academic integrity. These developments underscore the flexibility of LLMs in advancing KAS.
 
 \subsection{Large Language Models}
-LLMs are advanced language models trained using deep learning techniques on large text corpora. A notable example of LLMs is GPT (Generative Pre-trained Transformer) developed by OpenAI \cite{Brown2020}. LLMs possess the capacity to understand and generate text with high complexity. These models are typically trained on specific tasks, such as next-word prediction or context understanding, making them highly useful in various applications, including natural language processing, text generation, and even machine translation. In the context of knowledge acquisition, In the realm of knowledge systems, frameworks like LangChain enhance LLMs capabilities by providing essential tools to handle structured and unstructured data. LangChain bridges LLMs with Vector Stores, allowing seamless interaction between text data, embedding models, and memory structures, which is crucial for efficient long-term data storage and retrieval in dynamic applications \cite{deepLearning2023LangChain}. The integration of LangChain with LLMs like GPT has enabled advancements in document processing, question answering, and chatbot development by supporting large datasets and context-aware conversations. This combination fosters real-time interaction with diverse data types, creating highly scalable and responsive KAS.
+LLMs, such as GPT developed by OpenAI \cite{Brown2020}, excel in understanding and generating complex text for tasks like prediction and context understanding. In knowledge acquisition, frameworks like LangChain enhance LLMs' ability to handle structured and unstructured data \cite{deepLearning2023LangChain}. LangChain integrates LLMs with Vector Stores for efficient data storage, enabling real-time document processing, question answering, and chatbot development. This synergy supports large datasets and context-aware conversations, creating scalable and responsive KAS.
 
 \subsection{Vector Databases}
 Vector databases represent a concept in database management that uses vectors or mathematical representations of data. This approach enables vector-based data search and analysis, providing the ability to evaluate similarities between data vectors. In natural language processing, vector databases can be used to find similarities between texts based on vector representations of words or phrases \cite{Manning2008}. This approach is often employed in applications such as document retrieval and text classification.
 
 \subsection{ROUGE Score}
-ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is an automated evaluation metric used to assess the success of text summarization systems by comparing the generated summaries with reference texts. One commonly used ROUGE score is ROUGE-N, which measures the overlap of unigrams, bigrams, or other n-grams between the generated summary and the reference text \cite{Lin2004}. ROUGE, introduced by Lin \cite{Lin2004}, has become a standard method for evaluating summarization systems and continues to be used in natural language processing research. It provides a deeper understanding of how well the generated summaries align with reference texts considered as the gold standard.
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is an automated metric for evaluating text summarization by comparing generated summaries with reference texts. ROUGE-N, often used, measures the overlap of unigrams, bigrams, or other n-grams between the generated and reference summaries \cite{Lin2004}. Introduced by Lin, ROUGE has become a standard in summarization evaluation and remains widely used in natural language processing research for gauging how closely generated summaries align with gold-standard references.
 
 \subsection{BERT Score}
-Systems can also be evaluated using the LLMs itself. LLMs can assess answer relevance by considering semantic similarity between the generated answers and reference answers. This method employs techniques like BERTScore, proposed by Zhang et al. \cite{Zhang2020}, to evaluate contextual similarity using BERT embedding representations. Semantic evaluation ensures that the answers provided are not only factually correct but also relevant and contextually appropriate. Recent studies by Goyal et al. \cite{Goyal2020} emphasize the importance of semantic similarity evaluation to ensure that LLMs do not introduce bias or errors in their assessments. Thus, combining manual expert evaluation with semantic evaluation by the LLMs itself provides a comprehensive approach to assessing the accuracy and relevance of the answers generated by the system.
+Systems can also be evaluated using the LLMs itself. LLMs can assess answer relevance by considering semantic similarity between the generated answers and reference answers. This method employs techniques like BERTScore, proposed by Zhang et al. \cite{Zhang2020}, to evaluate contextual similarity using BERT embedding representations. Semantic evaluation ensures that the answers provided are not only factually correct but also relevant and contextually appropriate. Recent studies by Goyal et al. \cite{Goyal2020} emphasize the importance of semantic similarity evaluation to ensure that LLMs do not introduce bias or errors in their assessments.
 
 \subsection{Manual Evaluation}
-Manual evaluation with expert assistance is a crucial method for assessing the accuracy and relevance of answers produced by the system. This approach involves domain experts providing assessments based on criteria such as accuracy, completeness, and coherence. In this study, manual evaluation is conducted through expert surveys to assess the relevance of answers from the developed LLMs model. This method is similar to approaches used in recent research on evaluating text generation, where structured questionnaires and expert judgments are utilized to obtain more reliable assessments. For example, Guo et al. \cite{Guo2024} discuss improving text generation for product descriptions through human behavioral evaluation, while Celikyilmaz et al. \cite{Celikyilmaz2020} provide a comprehensive survey on various evaluation methods for text generation. Experts provide feedback based on factual accuracy, completeness of information, and contextual appropriateness of the answers provided by the system.
+Manual evaluation with expert assistance assesses the accuracy and relevance of system-generated answers. Experts evaluate based on criteria like accuracy, completeness, and coherence, using structured surveys. This method is comparable to research by Guo et al. \cite{Guo2024}, which improves product description generation through human evaluation, and Celikyilmaz et al. \cite{Celikyilmaz2020}, which surveys text generation evaluation methods. Experts provide feedback on the system's factual accuracy, completeness, and contextual appropriateness of responses.
 
 \section{System}
 The third part of this research discusses the proposed solution to address the knowledge acquisition problem in an academic environment. The proposed system is designed to automatically acquire knowledge by utilizing data from interviews with experts such as study program secretaries, and lecturers, as well as information contained in academic documents. 
@@ -139,10 +109,10 @@ The pre-processing stage is a critical initial step in preparing optimal input f
     
 \begin{enumerate}
     \item \textbf{Pre-Processing Document Data} \\
-    Initially, data from academic documents, typically in PDF format, undergoes conversion from PDF to text using the Langchain framework\'s document loader. Specifically, we use the \textbf{PyPDFLoader} from \textbf{document\_loaders} in Langchain to perform this conversion. This step ensures that the text is in a format that can be processed by the LLM. After conversion, the text from the documents is segmented by sentences, enabling the LLMs to understand the content more deeply by considering sentence structure. This segmentation is crucial to ensure that information from the documents can be effectively accessed and comprehended by the model.
+    Initially, data from academic documents, typically in PDF format, undergoes conversion from PDF to text using the LangChain framework's document loader. Specifically, we use the \textbf{PyPDFLoader} from \textbf{document\_loaders} in LangChain to perform this conversion. This step ensures that the text is in a format that can be processed by the LLM. After conversion, the text from the documents is segmented by sentences, enabling the LLMs to understand the content more deeply by considering sentence structure. This segmentation is crucial to ensure that information from the documents can be effectively accessed and comprehended by the model.
     
     \item \textbf{Pre-Processing Interview Data} \\
-    For interview data, automatic transcription is performed using the \textbf{YouTubeLoader} library from Langchain\'s  \textbf{document\_loaders}. This library facilitates the automatic extraction and transcription of audio from interviews. The initial step involves grouping questions and answers into related entities, allowing the model to comprehensively understand the context of the discussions. Following this, the pre-processing of interview data mirrors that of document data, with text segmentation by sentences. This creates a uniform data structure, facilitating the model\'s understanding of information extracted from interviews.
+    For interview data, automatic transcription is performed using the \textbf{YouTubeLoader} library from LangChain's  \textbf{document\_loaders}. This library facilitates the automatic extraction and transcription of audio from interviews. The initial step involves grouping questions and answers into related entities, allowing the model to comprehensively understand the context of the discussions. Following this, the pre-processing of interview data mirrors that of document data, with text segmentation by sentences. This creates a uniform data structure, facilitating the model's understanding of information extracted from interviews.
 \end{enumerate}
 
 Through meticulous and careful pre-processing, the data is expected to provide a better and more contextual representation when presented to the LLMs. This process serves as a crucial initial step in building a reliable and effective KAS in the academic environment.
@@ -174,32 +144,20 @@ By using the LLMs, the system can understand and represent the information extra
 \subsection{Fine Tuning}
 Fine-tuning is a critical stage in optimizing the model to respond more accurately and relevantly to specific questions or contexts. We divided the fine tuning into two subprocesses: first at the individual level using a single Vector Database (Vector DB), and second at the aggregation level using a combined vector database.
 
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.4]{eng-fine1.png}}
+    \caption{Fine Tuning}
+    \label{fig:fine-tuning-1}
+\end{figure}
+
 \begin{enumerate}
     \item \textbf{Fine Tuning \#1} \\
-        Figure \ref{fig:fine-tuning-1} illustrates the process of the first fine-tuning phase. This phase begins with the use of a single Vector Database as input. Each vector from the Vector DB is involved in the fine-tuning process to enhance the model's ability to understand the content and respond more accurately. Fine-tuning is achieved through the use of Neural Network layers, which in this context are equivalent to embeddings. The goal of this phase is to produce vector representations that are more contextual and relevant to the individual information sources. The term "contextual" here means that the vector store saves these embeddings in a way that captures multiple meanings or synonyms, derived from GPT, allowing the model to better understand the nuances and context of the information.
-
-        \begin{figure}[htbp]
-            \centerline{\includegraphics[scale=0.4]{eng-fine1.png}}
-            \caption{Fine Tuning}
-            \label{fig:fine-tuning-1}
-        \end{figure}
-
-        Following fine-tuning, the model undergoes a stage of \textbf{Contextual Understanding}.  At this stage, the model uses GPT to consider the context more comprehensively, allowing for better interpretation of user questions or inputs. This process integrates contextual understanding, meaning the model is capable of recognizing similar text or synonyms, ensuring that responses are aligned with the given context even when different wording is used.
-
-        The final step of the first fine-tuning phase is \textbf{Answer Generation}. In this phase, the optimized model generates answer based on the contextual understanding and enhanced vector representations. This involves similarity search to match user queries with the most relevant information from the database and generate an appropriate response.
+    
+    The first fine-tuning phase, shown in Figure \ref{fig:fine-tuning-1}, begins by using vectors from a Vector Database as input. Neural Network layers, or embeddings, are used to fine-tune the model, improving its ability to understand content contextually. "Contextual" refers to capturing multiple meanings and synonyms. After this, the model enters a Contextual Understanding phase, interpreting queries better through GPT. Finally, the model uses similarity search during Answer Generation to provide the most relevant responses based on refined vector representations.
                     
     \item \textbf{Fine Tuning \#2} \\
         The second fine-tuning phase, involves a similar process but at the aggregation level using the combined vector database. In this stage, vector representations from various sources of information are integrated, and the model undergoes another round of fine-tuning. The focus here is on understanding and responding to questions or contexts that involve multiple aspects of knowledge acquisition.
 \end{enumerate}
-
-            
-The process for the fine-tuning phase includes:
-\begin{itemize}
-    \item Input: Vector database and user questions.
-    \item Neural Layer: Embeddings representing the integrated vectors.
-    \item Contextual Understanding: Using GPT for a comprehensive understanding of the context to create Contextual Insights.
-    \item Answer Generation: Performing similarity search to generate a answer based on the  knowledge.
-\end{itemize}
 
 Through these two stages of fine-tuning, it is anticipated that the model will deliver improved knowledge acquisition results, taking into account the depth of information from the involved sources and generating more contextual and relevant responses.
 
@@ -209,7 +167,7 @@ Through these two stages of fine-tuning, it is anticipated that the model will d
 The development and functionality of the system are powered by several key technologies:
 \begin{itemize}
     \item Streamlit: Used for the front-end interface of the web-based chatbot, enabling users to interact with the system in a user-friendly manner.
-    \item Langchain: A critical framework used to integrate different language models, such as GPT, and manage workflows for document processing and question answering.
+    \item LangChain: A critical framework used to integrate different language models, such as GPT, and manage workflows for document processing and question answering.
     \item FAISS Vector Store: Used for storing and retrieving vectorized embeddings of the knowledge processed from the input data. This ensures efficient and accurate search capabilities within the knowledge base.
     \item OpenAI Embedding and Chat: The core LLMs and embedding generation tool. OpenAI's GPT is used to generate embeddings, process user inputs, and provide accurate, context-based responses.
 \end{itemize}
@@ -217,13 +175,13 @@ The development and functionality of the system are powered by several key techn
 \subsection{Input Page: Data Upload and Processing}
 This section of the system allows users to upload various types of data to be processed and added to the knowledge base. Users can submit different data formats to capture knowledge in diverse ways:
 \begin{itemize}
-    \item PDF Files: Users can upload academic documents, research papers, or administrative files, which are processed using Langchain's PyPDFLoader. The system extracts the text and converts it into a structured format.
+    \item PDF Files: Users can upload academic documents, research papers, or administrative files, which are processed using LangChain's PyPDFLoader. The system extracts the text and converts it into a structured format.
     \item JSON Files: Structured data in JSON format can be directly uploaded, allowing the system to quickly process datasets or academic records.
-    \item YouTube URLs: Leveraging Langchain's YouTubeLoader, users can input a YouTube URL for automatic transcription. The system extracts the text from the video’s captions and processes it for further use.
+    \item YouTube URLs: Leveraging LangChain's YouTubeLoader, users can input a YouTube URL for automatic transcription. The system extracts the text from the video's captions and processes it for further use.
     \item Raw Text: Users can input plain text directly, making the system flexible for adding knowledge from various informal sources like interviews, lectures, or meeting notes.
 \end{itemize}
 
-Once the input data is uploaded, the system processes and converts it into embeddings using OpenAI’s embedding model. The vectorized data is stored in the FAISS Vector Store for quick and contextually relevant retrieval.
+Once the input data is uploaded, the system processes and converts it into embeddings using OpenAI's embedding model. The vectorized data is stored in the FAISS Vector Store for quick and contextually relevant retrieval.
 
 \subsection{Chatbot Page: Interactive Knowledge Access}
 The chatbot interface allows users to interact directly with the knowledge stored in the system:
@@ -314,60 +272,35 @@ BERTScore evaluates semantic similarity between the generated text and reference
 \end{itemize}
     
 \subsection{Manual Evaluation}
-Manual evaluation involves experts providing direct feedback on the accuracy and relevance of the answers generated by the system. Experts assess answers based on criteria such as factual accuracy, completeness of information, and contextual appropriateness. This evaluation method provides deeper insights into the quality of answers that cannot be captured by automatic metrics alone, such as ROUGE Score and BERTScore.
-
-
-For this study, we employed two experts with over 25 years of experience in their respective fields, including a program secretary who is deeply familiar with academic processes and tacit knowledge within the institution. Their expertise was crucial in evaluating the system’s performance, ensuring that the generated answers were both practically applicable and aligned with institutional standards.
-
-To evaluate the system, we posed questions across 6 distinct topics, with 10 questions per topic. Each answer was assessed for relevance on a scale ranging from "not relevant" to "highly relevant." This approach allowed us to measure how well the system addressed the questions within each topic and provided comprehensive insights into the system’s ability to generate contextually appropriate and accurate responses.
+Manual evaluation involved two experts with over  25 years of experience in their respective fields, including a program secretary who is deeply familiar with academic processes and tacit knowledge within the institution. They evaluated responses based on contextual relevance. Questions spanned six distinct topics, with 10 questions per topic. Each answer was rated on a relevance scale, ranging from "not relevant" to "highly relevant." This approach provided detailed insights into how well the system handled context and generated accurate, institutionally aligned answers, offering a deeper assessment than automated metrics like ROUGE Score and BERTScore.
 
 \subsection{Results}
 Combining these three approaches ensures a comprehensive assessment of the KAS, considering both surface-level text similarity and semantic similarity, and provides a fuller picture of the quality of the answers produced by the system.
 
-For more detailed information, the model performance results with ROUGE Score can be seen in Table\ref{tab:rouge-table}. The table shows that scoring using unigrams dominates, with precision as the highest metric.
+For more detailed information, the model performance results with ROUGE Score can be seen in Table\ref{tab:rouge-bert-table}. The table shows that scoring using unigrams dominates, with precision as the highest metric.
 
 \begin{table}[htbp]
     \centering
-    \caption{Rouge Score}
+    \caption{Rouge and BERT Scores}
     \setlength{\arrayrulewidth}{0.5pt} % Adjust the thickness of vertical lines
     \renewcommand{\arraystretch}{1.5} % Adjust vertical spacing
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-        \cline{2-7}
-        \multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\textbf{Unigram}} & \multicolumn{3}{c|}{\textbf{Bigram}} \\ 
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \cline{2-10}
+        \multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\textbf{Unigram (Rouge)}} & \multicolumn{3}{c|}{\textbf{Bigram (Rouge)}} & \multicolumn{3}{c|}{\textbf{BERT Score}} \\ 
         \hline
-        \textbf{Dataset} & \textbf{PREC} & \textbf{REC} & \textbf{F1} & \textbf{PREC} & \textbf{REC} & \textbf{F1} \\
+        \textbf{Dataset} & \textbf{PREC} & \textbf{REC} & \textbf{F1} & \textbf{PREC} & \textbf{REC} & \textbf{F1} & \textbf{PREC} & \textbf{REC} & \textbf{F1} \\
         \hline
-        Document & \textbf{0.72} & 0.12 & 0.20 & 0.38 & 0.04 & 0.09 \\ 
+        Document & \textbf{0.72} & 0.12 & 0.20 & 0.38 & 0.04 & 0.09 & \textbf{0.74} & 0.58 & 0.65 \\ 
         \hline
-        Interview & \textbf{0.79} & 0.11 & 0.19 & 0.40 & 0.03 & 0.06 \\ 
+        Interview & \textbf{0.79} & 0.11 & 0.19 & 0.40 & 0.03 & 0.06 & \textbf{0.76} & 0.60 & 0.67 \\ 
         \hline
-        Combined & \textbf{0.74} & 0.13 & 0.21 & 0.40 & 0.05 & 0.09 \\ 
-        \hline
-    \end{tabular}
-    \label{tab:rouge-table}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \caption{BERT Score}
-    \setlength{\arrayrulewidth}{0.5pt} % Adjust the thickness of vertical lines
-    \renewcommand{\arraystretch}{1.5} % Adjust vertical spacing
-    \begin{tabular}{|c|c|c|c|}
-        \cline{2-4}
-        \hline
-        \textbf{Dataset} & \textbf{PREC} & \textbf{REC} & \textbf{F1}  \\
-        \hline
-        Document & \textbf{0.74} & 0.58 & 0.65 \\ 
-        \hline
-        Interview & \textbf{0.76} & 0.60 & 0.67 \\ 
-        \hline
-        Combined & \textbf{0.75} & 0.59 & 0.66 \\ 
+        Combined & \textbf{0.74} & 0.13 & 0.21 & 0.40 & 0.05 & 0.09 & \textbf{0.75} & 0.59 & 0.66 \\ 
         \hline
     \end{tabular}
-    \label{tab:bert-table}
+    \label{tab:rouge-bert-table}
 \end{table}
 
-For the model performance results with BERTScore can be seen in Table \ref{tab:bert-table}. The table shows that the model performs well contextually, with the highest score still obtained in the precision metric. A high precision score indicates that the model tends to produce answers that are highly relevant and semantically in line with the existing references.
+For the model performance results with BERTScore can be seen in Table \ref{tab:rouge-bert-table}. The table shows that the model performs well contextually, with the highest score still obtained in the precision metric. A high precision score indicates that the model tends to produce answers that are highly relevant and semantically in line with the existing references.
 
 However, the combined dataset scored lower than the interview dataset due to the PDF-to-text extraction in documents. This extraction method has weaknesses that affect the quality of the text, leading to a lower combined result. Therefore, even though the precision score is high, it is important to consider recall and F1 score metrics. A lower recall score may indicate that the model missed some relevant information, and the F1 score balances precision and recall, highlighting areas for improvement.
 
