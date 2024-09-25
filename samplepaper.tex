@@ -100,12 +100,13 @@ Then, the vector representation is then stored into a Vector Database (Vector DB
     \item \textbf{Pre-Processing Interview Data} For interview data, automatic transcription is performed using the \textbf{YouTubeLoader} library from LangChain's  \textbf{document\_loaders}. This library facilitates the automatic extraction and transcription of audio from interviews. The initial step involves grouping questions and answers into related entities, allowing the model to comprehensively understand the context of the discussions. Following this, the pre-processing of interview data mirrors that of document data, with text segmentation by sentences. This creates a uniform data structure, facilitating the model's understanding of information extracted from interviews.
 \end{enumerate}
 
-Through meticulous and careful pre-processing, the data is expected to provide a better and more contextual representation when presented to the LLMs. This process serves as a crucial initial step in building a reliable and effective KAS in the academic environment. \\
-\\
+Through meticulous and careful pre-processing, the data is expected to provide a better and more contextual representation when presented to the LLMs. This process serves as a crucial initial step in building a reliable and effective KAS in the academic environment.
+\newpage
 \textbf{\textit{LLM}} The next stage after data pre-processing is knowledge extraction using the LLMs.
 
 \begin{algorithm}
     \caption{Tokenization, Embedding, and Vector Storage}
+    \label{algo:llm}
     \begin{algorithmic}[1]
     \State \textbf{Input:} text data $T$, LLM model $M$, vector database $VDB$
     \State \textbf{Output:} vector database updated with embeddings
@@ -129,7 +130,7 @@ Through meticulous and careful pre-processing, the data is expected to provide a
     \end{algorithmic}
 \end{algorithm}
 
-This process includes several critical steps outlined as follows:
+Algorithm \ref{algo:llm} shows how a LLM is utilized for processing text data.
 
 \begin{enumerate}  
     \item \textbf{Tokenization} After reading the text, tokenization is performed to break the text into tokens or smaller units that can be processed by the model. Tokenization helps the model to understand the structure and meaning of words within the context of sentences.
@@ -161,19 +162,19 @@ Through these two stages of fine-tuning, it is anticipated that the model will d
 \subsection{Tools and Technologies Used}
 The development and functionality of the system are powered by several key technologies:
 \begin{itemize}
-    \item Streamlit: Used for the front-end interface of the web-based chatbot, enabling users to interact with the system in a user-friendly manner.
-    \item LangChain: A critical framework used to integrate different language models, such as GPT, and manage workflows for document processing and question answering.
-    \item FAISS Vector Store: Used for storing and retrieving vectorized embeddings of the knowledge processed from the input data. This ensures efficient and accurate search capabilities within the knowledge base.
-    \item OpenAI Embedding and Chat: The core LLMs and embedding generation tool. OpenAI's GPT is used to generate embeddings, process user inputs, and provide accurate, context-based responses.
+    \item \textbf{Streamlit}: For the front-end interface, providing a user-friendly chatbot interaction.
+    \item \textbf{LangChain}: Integrates language models (e.g., GPT) for document processing and question answering.
+    \item \textbf{FAISS Vector Store}: Stores and retrieves vector embeddings, ensuring efficient search within the knowledge base.
+    \item \textbf{OpenAI Embedding and Chat}: Core tool for generating embeddings and providing context-based responses.
 \end{itemize}
 
 \subsection{Input Page: Data Upload and Processing}
 This section of the system allows users to upload various types of data to be processed and added to the knowledge base. Users can submit different data formats to capture knowledge in diverse ways:
 \begin{itemize}
-    \item PDF Files: Users can upload academic documents, research papers, or administrative files, which are processed using LangChain's PyPDFLoader. The system extracts the text and converts it into a structured format.
-    \item JSON Files: Structured data in JSON format can be directly uploaded, allowing the system to quickly process datasets or academic records.
-    \item YouTube URLs: Leveraging LangChain's YouTubeLoader, users can input a YouTube URL for automatic transcription. The system extracts the text from the video's captions and processes it for further use.
-    \item Raw Text: Users can input plain text directly, making the system flexible for adding knowledge from various informal sources like interviews, lectures, or meeting notes.
+    \item \textbf{PDF Files}: Upload academic documents, research papers, or administrative files. LangChain's PyPDFLoader extracts the text and converts it into a structured format.
+    \item \textbf{JSON Files}: Upload structured data, such as datasets or academic records, for quick processing.
+    \item \textbf{YouTube URLs}: Input a YouTube URL for automatic transcription. LangChain's YouTubeLoader extracts and processes the text.
+    \item \textbf{Raw Text}: Input plain text directly for adding informal knowledge, such as interviews or meeting notes.
 \end{itemize}
 
 Once the input data is uploaded, the system processes and converts it into embeddings using OpenAI's embedding model. The vectorized data is stored in the FAISS Vector Store for quick and contextually relevant retrieval.
@@ -312,6 +313,8 @@ Out of a total of 60 questions:
 These results show that the system performs quite well in answering questions in a relevant and contextual manner according to expert judgment.
 
 Thus, the use of the ROUGE metric as a guide for quantitative evaluation, then the BERT metric for semantic evaluation and together with the input from the expert evaluation, can provide a more holistic and detailed understanding of the overall quality of the developed text generation system.
+
+Additionally, the demonstration of the system's ability to integrate knowledge from various sources, such as PDF files and video recordings (like socialization videos), further enhances its effectiveness.
 
 \section{Conclusion}
 In this research, a system for automatic knowledge acquisition in the academic domain has been successfully proposed and implemented using LLMs and fine-tuning techniques. The evaluation conducted shows that the system is capable of acquiring, understanding, and responding to various types of questions and contexts related to the academic environment.
